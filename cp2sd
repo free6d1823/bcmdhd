@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Copy dhd.ko to sd card..."
+#MMCDIR=/media/b1cb822a-5aee-4a40-8516-5ed520b0c4a3
+#MMCDIR=/media/91d3deec-9d0c-4cb8-b4a7-73aacee4713a
+#MMCDIR=/media/54dd7198-863a-4654-a57a-a99c454c14d6
+#MMCDIR=/media/d1c80514-fd97-4af1-9e18-d77c5fca227b
+MMCDIR=/media/2622d8ba-9510-4ec4-b59b-9a3c25c35de1
+DHDDIR=lib/modules/3.0.35-ts-armv7l-2026-geaaf30e/kernel/drivers/net/wireless/bcmdhd
+sudo cp /opt/R30/bcmdhd/src/dhd/linux/dhd-cdc-sdmmc-cfg80211-gpl-3.0.35/dhd.ko \
+${MMCDIR}/${DHDDIR}/bcmdhd.ko
+ls -l ${MMCDIR}/${DHDDIR}/
+sync
+echo "Done"
